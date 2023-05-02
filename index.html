@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Oleo+Script+Swash+Caps:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ef4d147408.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  body{
+    background-color:linear-gradient(rgb(4, 4, 40), rgb(10, 10, 94), rgb(0, 0, 8)); 
+  }
+
+  .container {
+    background:linear-gradient(rgb(4, 4, 40), rgb(10, 10, 94), rgb(0, 0, 8));
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login_box {
+    height: 70%;
+    width: 25%;
+    background:linear-gradient(rgb(217, 239, 255), rgb(0, 72, 128));
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgb(0, 0, 0) 1rem 1rem .5rem, rgb(0, 0, 0) -1rem -1rem .5rem ;
+  }
+
+  #login_info {
+    height:auto;
+    width: auto;
+    text-align: center;
+  }
+
+  input {
+    /* height: 4rem;
+        width: 90%; */
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    outline: none;
+    border: none;
+    border-bottom: 0.2rem solid rgb(14, 8, 49);
+    /* border-radius: .5rem; */
+    text-align: center;
+    background-color: rgb(245, 232, 255);
+    border-radius: 1rem;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  input::placeholder {
+    color: rgb(184, 220, 249);
+  }
+
+  #user_div {
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+  }
+
+  .fa-user-graduate {
+    font-size: 6rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: rgb(14, 8, 49);
+  }
+
+  #btn-go {
+    margin-top: 3rem;
+    display: block;
+    border: none;
+    align-self: center;
+    background-color: inherit;
+    margin-left: 7.5rem;
+  }
+
+  .fa-toggle-off {
+    font-size: 6rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: rgb(14, 8, 49);
+    
+  }
+
+  #heading {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgb(14, 8, 49);
+    text-transform: uppercase;
+    /* border: .1rem inset rgb(14, 8, 49); */
+    background-color:rgb(255, 255, 255) ;
+    padding: .5rem 1.5rem;
+    border-radius: 3rem;
+    box-shadow: .3rem .3rem .3rem ,-.3rem -.3rem .3rem ;
+
+  }
+  .author{
+    padding-top: 2rem;
+    color:rgb(14, 8, 49) ;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* color: white; */
+    /* background-color: aqua; */
+  }
+
+  @media screen and (min-width:376px) and (max-width:768px) {
+
+    html {
+      font-size: 58%;
+    }
+
+    .login_box {
+      height: auto;
+      width: 33rem;
+      padding: 4rem 0rem;
+
+    }
+  }
+
+  @media screen and (max-width:376px) {
+
+    html {
+      font-size: 55%;
+    }
+
+    .login_box {
+      height: auto;
+      width: 33rem;
+      padding: 3rem 0rem;
+      margin: auto;
+      /* margin-top:30rem; */
+      margin-top: 10rem;
+    }
+
+    
+
+  }
+
+  @media screen and (min-width:768px) {
+
+    html {
+      font-size: 62.5%;
+    }
+
+    .login_box {
+      height: auto;
+      width: 35rem;
+      padding: 5rem 0rem;
+    }
+
+  }
+
+  
+</style>
+
+<body>
+  <div class="container">
+
+    <div class="login_box">
+      <div id="heading">Grade Card</div>
+      <div id="login_info">
+        <div id="user_div">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+<form action="second.html" onsubmit="passName(),passRoll()">
+        <label for="name"></label>
+        <input type="text" placeholder="NAME" class="input" id="name" required/><br />
+        <label for="rollno"></label>
+        <input type="text"placeholder="BE20F0XXXX" class="input"  id="roll" required/>
+
+        <button id="btn-go">
+          <i class="fa-solid fa-toggle-off" onclick ="onswitch()"></i></a>
+        </button>
+        </form>
+      </div>
+      <div class="author">
+        Developed by  -  RITESH WAKODE
+      </div>
+    </div>
+    
+  </div>
+
+  
+
+  <script>
+
+    function onswitch()
+    {
+      document.querySelector('.fa-toggle-off').setAttribute("class", "fa-solid fa-toggle-on");
+      document.querySelector('.fa-toggle-on').setAttribute("style", "font-size: 6rem; padding: 0.5rem; margin: 0.5rem;color: rgb(14, 8, 49); ");
+    }
+    
+    function passName() {
+        let sel = document.getElementById("name");
+        last = sel.value;
+        localStorage.setItem("myName", last);
+        return false;
+      }
+
+      function passRoll() {
+        let sel = document.getElementById("roll");
+        last = sel.value;
+        localStorage.setItem("myRoll", last);
+        return false;
+      }
+  </script>
+
+  
+</body>
+
+</html>
